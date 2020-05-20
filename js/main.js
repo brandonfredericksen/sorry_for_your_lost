@@ -8,18 +8,6 @@ $(document).ready(function(){
 	header_height_static = 80,
 	fitscreen 			 = window_height - header_height;
 
-  if (fitscreen < 600)
-  {
-    fitscreen = 600;
-  }
-
-  if (window_height < 600)
-  {
-    window_height = 600;
-  }
-
-  console.log(window_height);
-
 	$(".fullscreen").css("height", window_height - 80)
 	$(".fitscreen").css("height", fitscreen - 80);
 
