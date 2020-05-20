@@ -4,13 +4,24 @@ $(document).ready(function(){
 
 	var window_width 	 = $(window).width(),
 	window_height 		 = window.innerHeight,
-	header_height 		 = $(".default-header").height(),
-	header_height_static = $(".site-header.static").outerHeight(),
+	header_height 		 = 80,
+	header_height_static = 80,
 	fitscreen 			 = window_height - header_height;
 
+  if (fitscreen < 600)
+  {
+    fitscreen = 600;
+  }
 
-	$(".fullscreen").css("height", window_height)
-	$(".fitscreen").css("height", fitscreen);
+  if (window_height < 600)
+  {
+    window_height = 600;
+  }
+
+  console.log(window_height);
+
+	$(".fullscreen").css("height", window_height - 80)
+	$(".fitscreen").css("height", fitscreen - 80);
 
  //-------- Active Sticky Js ----------//
      $(".default-header").sticky({topSpacing:0});
